@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Landing Page</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+  <!-- Barra de navegación -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top bg-personalizado">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/All_Blue_H.png" alt="Logo" width="240" height="80" class="d-inline-block align-text-middle">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#inicio">INICIO</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">SERVICIOS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">NOSOTROS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#opiniones">OPINIONES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">CONTACTO</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Secciones -->
+  <section id="inicio" class="position-relative">
+
+    <div class="texto-estatico-superior">
+      <h1>BIENVENIDO A ZAXAR</h1>
+      <h2>Tu propiedad, Nuestra estrategia</h2>
+    </div>
+
+    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/img/carrusel1.png" class="d-block w-100 carousel-img" alt="Imagen 1">
+            <div class="carousel-caption d-block">
+              <p>EN GRUPO ZAXAR, DESTACAMOS POR OFRECER ESTRATEGIAS DE VENTA PERSONALIZADAS, ADAPTADAS A LAS NECESIDADES DE CADA CLIENTE</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/img/carrusel2.png" class="d-block w-100 carousel-img" alt="Imagen 2">
+            <div class="carousel-caption d-block">
+              <p>COMBINAMOS UN PROFUNDO CONOCIMIENTO DEL MERCADO LOCAL CON TECNOLOGÍA DE VANGUARDIA Y UNA SÓLIDA RED DE CONTACTOS PARA MAXIMIZAR EL POTENCIAL DE CADA OPERACIÓN</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/img/carrusel3.png" class="d-block w-100 carousel-img" alt="Imagen 3">
+            <div class="carousel-caption d-block">
+              <p>NUESTRO COMPROMISO ES LOGRAR RESULTADOS EFICACES Y UNA EXPERIENCIA DE VENTA ÁGIL Y SEGURA</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <div class="container-card my-5 fondo-golf mb-3 w-100">
+      <div class="row justify-content-center mt-extra1">
+        
+        <!-- TARJETA 1 -->
+        <div class="col-md-6 col-lg-6 mb-4 mt-extra1 d-flex justify-content-center">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <h3>¿Quieres vender tu inmueble?</h3>
+              </div>
+              <div class="flip-card-back">
+                <p>En nuestra agencia inmobiliaria vamos más allá de lo convencional. Te brindamos un informe de valoración completamente gratuito y adaptado a tu propiedad, imágenes profesionales de alta calidad, técnicas de home staging para realzar cada espacio y un acompañamiento cercano y personalizado durante todo el proceso.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TARJETA 2 -->
+        <div class="col-md-6 col-lg-6 mb-4 mt-extra1 d-flex justify-content-center">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <h3>¿Quieres comprar un inmueble?</h3>
+              </div>
+              <div class="flip-card-back">
+                <p>En Grupo Zaxar no te dejamos solo frente al caos del mercado.vNos encargamos de buscar activamente las propiedades que realmente encajan contigo y te presentamos solo lo mejor, con información clara y bien organizada. Así tomas decisiones rápidas, seguras y sin estrés.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TARJETA 3 -->
+        <div class="col-md-6 col-lg-6 mb-5 mt-5 d-flex justify-content-center">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <h3>¿Quieres rentabilizar tu inmueble?</h3>
+              </div>
+              <div class="flip-card-back">
+                <p>Saca el máximo rendimiento a tu inmueble con el alquiler vacacional. Con la experiencia de Grupo Zaxar , te ayudamos a convertir tu propiedad en una fuente constante de ingresos. Nos encargamos de la gestión completa para que tú solo disfrutes de los beneficios sin preocupaciones.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TARJETA 4 -->
+        <div class="col-md-6 col-lg-6 mb-5 mt-5 d-flex justify-content-center">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <h3>¿Quieres invertir en propiedades?</h3>
+              </div>
+              <div class="flip-card-back">
+                <p>Contamos con una amplia variedad de opciones de inversión a corto, medio y largo plazo. En nuestra agencia te ofrecemos oportunidades únicas tanto en España como en el norte de Marruecos. Podemos asesorarte de forma personalizada, ya sea de manera online o en persona. Y de fondo en este apartado me gustaría una foto de algún paisaje con palmeras y el mar de fondo en una villa o desde un campo de golf o algo de eso</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <section id="servicios" class="py-3 bg-personalizado">
+    
+    <div class="text-center mt-4">
+    <h2>¿Qué deseas hacer?</h2>
+    <div class="d-flex justify-content-center gap-4 mt-3 flex-wrap">
+
+    <a href="catalogo.html" class="btn btn-primary btn-lg btn-estilo-lujo">Comprar</a>
+    <a href="vender.html" class="btn btn-dark btn-lg btn-estilo-lujo">Vender</a>
+
+    </div>
+
+  </section>
+
+  <section id="nosotros" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">Sobre Nosotros</h2>
+      <p>Un equipo comprometido con la excelencia.</p>
+    </div>
+  </section>
+
+  <section id="opiniones" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="mb-4">Lo que dicen de nosotros</h2>
+      <p>La satisfacción de nuestros clientes es lo más importante.</p>
+    </div>
+  </section>
+
+  <section id="contacto" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">Contacto</h2>
+      <form>
+        <div class="mb-3"><input type="text" class="form-control" placeholder="Tu nombre" required></div>
+        <div class="mb-3"><input type="email" class="form-control" placeholder="Tu email" required></div>
+        <div class="mb-3"><textarea class="form-control" rows="4" placeholder="Mensaje"></textarea></div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
