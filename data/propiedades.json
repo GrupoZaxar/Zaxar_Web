@@ -1,0 +1,46 @@
+[
+  {
+    "id": "P001",
+    "titulo": "Ático con vistas al mar",
+    "localidad": "Nerja",
+    "tipo": "Casa", 
+    "precio": 325000,
+    "metros": 98,
+    "dormitorios": 3,
+    "baños": 2,
+    "imagenes": 3
+  },
+  {
+    "id": "P002",
+    "titulo": "Apartamento primera linea",
+    "localidad": "Torrox Costa",
+    "tipo": "Piso", 
+    "precio": 289000,
+    "metros": 120,
+    "dormitorios": 4,
+    "baños": 3,
+    "imagenes": 2
+  },
+  {
+    "id": "P003",
+    "titulo": "Casa adosada con piscina",
+    "localidad": "El Rincón de la Victoria",
+    "tipo": "Adosado", 
+    "precio": 299000,
+    "metros": 110,
+    "dormitorios": 3,
+    "baños": 2,
+    "imagenes": 2
+    },
+    {
+    "id": "P004",
+    "titulo": "Casa con jardín y piscina",
+    "localidad": "Marbella",
+    "tipo": "Casa", 
+    "precio": 380000,
+    "metros": 120,
+    "dormitorios": 4,
+    "baños": 2,
+    "imagenes": 2
+    }
+]

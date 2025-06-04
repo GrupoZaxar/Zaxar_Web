@@ -8,6 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="/js/scroll-animations.js"></script>
+  <script src="/js/servicios.js"></script>
+</body>
+
 
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
@@ -24,9 +28,9 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link active" href="#inicio">INICIO</a></li>
-          <li class="nav-item"><a class="nav-link" href="#servicios">SERVICIOS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#oportunidades">OPORTUNIDADES</a></li>
           <li class="nav-item"><a class="nav-link" href="#nosotros">NOSOTROS</a></li>
-          <li class="nav-item"><a class="nav-link" href="#opiniones">OPINIONES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">SERVICIOS</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">CONTACTO</a></li>
         </ul>
       </div>
@@ -36,12 +40,12 @@
   <!-- Secciones -->
   <section id="inicio" class="position-relative">
 
-    <div class="texto-estatico-superior">
+    <div class="texto-estatico-superior animate-on-scroll">
       <h1>BIENVENIDO A ZAXAR</h1>
       <h2>Tu propiedad, Nuestra estrategia</h2>
     </div>
 
-    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="/img/carrusel1.png" class="d-block w-100 carousel-img" alt="Imagen 1">
@@ -70,7 +74,7 @@
         </button>
     </div>
 
-    <div class="container-card my-5 fondo-golf mb-3 w-100">
+    <div class="container-card fondo-golf w-100">
       <div class="row justify-content-center mt-extra1">
         
         <!-- TARJETA 1 -->
@@ -81,7 +85,7 @@
                 <h3>¿Quieres vender tu inmueble?</h3>
               </div>
               <div class="flip-card-back">
-                <p>En nuestra agencia inmobiliaria vamos más allá de lo convencional. Te brindamos un informe de valoración completamente gratuito y adaptado a tu propiedad, imágenes profesionales de alta calidad, técnicas de home staging para realzar cada espacio y un acompañamiento cercano y personalizado durante todo el proceso.</p>
+                <p>En nuestra agencia inmobiliaria vamos más allá de lo convencional. Te brindamos un informe de valoración gratuito y adaptado a tu propiedad, imágenes profesionales de calidad, técnicas de home staging para realzar cada espacio y un acompañamiento personalizado durante todo el proceso.</p>
               </div>
             </div>
           </div>
@@ -95,7 +99,7 @@
                 <h3>¿Quieres comprar un inmueble?</h3>
               </div>
               <div class="flip-card-back">
-                <p>En Grupo Zaxar no te dejamos solo frente al caos del mercado.vNos encargamos de buscar activamente las propiedades que realmente encajan contigo y te presentamos solo lo mejor, con información clara y bien organizada. Así tomas decisiones rápidas, seguras y sin estrés.</p>
+                <p>En Grupo Zaxar no te dejamos solo frente al caos del mercado. Nos encargamos de buscar activamente las propiedades que realmente encajan contigo y te presentamos solo lo mejor, con información clara y bien organizada. Así tomas decisiones rápidas, seguras y sin estrés.</p>
               </div>
             </div>
           </div>
@@ -123,7 +127,7 @@
                 <h3>¿Quieres invertir en propiedades?</h3>
               </div>
               <div class="flip-card-back">
-                <p>Contamos con una amplia variedad de opciones de inversión a corto, medio y largo plazo. En nuestra agencia te ofrecemos oportunidades únicas tanto en España como en el norte de Marruecos. Podemos asesorarte de forma personalizada, ya sea de manera online o en persona. Y de fondo en este apartado me gustaría una foto de algún paisaje con palmeras y el mar de fondo en una villa o desde un campo de golf o algo de eso</p>
+                <p>Contamos con una amplia variedad de opciones de inversión a corto, medio y largo plazo. En nuestra agencia te ofrecemos oportunidades únicas tanto en España como en el norte de Marruecos. Podemos asesorarte de forma personalizada, ya sea de manera online o en persona.</p>
               </div>
             </div>
           </div>
@@ -135,44 +139,376 @@
   </section>
 
 
-  <section id="servicios" class="py-3 bg-personalizado">
+  <section id="oportunidades" class="bg-personalizado fondo-oportunidades">
     
-    <div class="text-center mt-4">
+    <div class="text-center animate-on-scroll">
     <h2>¿Qué deseas hacer?</h2>
-    <div class="d-flex justify-content-center gap-4 mt-3 flex-wrap">
 
-    <a href="catalogo.html" class="btn btn-primary btn-lg btn-estilo-lujo">Comprar</a>
-    <a href="vender.html" class="btn btn-dark btn-lg btn-estilo-lujo">Vender</a>
-
+    <div class="botones-accion">
+      <a href="catalogo.html" class="btn-personalizado btn-comprar">
+        <i class="fas fa-home"></i> Comprar
+      </a>
+    <!-- Sustituye tu <a href="vender.html">…</a> por: -->
+      <button class="btn-personalizado btn-vender px-4" data-bs-toggle="modal" data-bs-target="#venderModal">
+        Quiero vender
+      </button>
     </div>
+
+
+
+
+    <div class="text-center_bottom">
+    <h3>SENCILLO - SEGURO - ZAXAR</h3>
 
   </section>
 
-  <section id="nosotros" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="mb-4">Sobre Nosotros</h2>
-      <p>Un equipo comprometido con la excelencia.</p>
-    </div>
-  </section>
+<section id="nosotros" class="nosotros-seccion">
+  <div class="container">
 
-  <section id="opiniones" class="py-5 bg-white">
-    <div class="container">
-      <h2 class="mb-4">Lo que dicen de nosotros</h2>
-      <p>La satisfacción de nuestros clientes es lo más importante.</p>
+    <!-- Título principal -->
+    <div class="text-center-nosotros mb-5 animate-on-scroll">
+      <h2 class="titulo-nosotros">Sobre Nosotros</h2>
+      <p class="lead subtitulo">En Grupo Zaxar trabajamos para hacer realidad tus proyectos inmobiliarios. Nos especializamos en compraventa, alquiler vacacional y gestión de inversiones en la Costa del Sol y el norte de Marruecos.</p>
     </div>
-  </section>
 
-  <section id="contacto" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="mb-4">Contacto</h2>
-      <form>
-        <div class="mb-3"><input type="text" class="form-control" placeholder="Tu nombre" required></div>
-        <div class="mb-3"><input type="email" class="form-control" placeholder="Tu email" required></div>
-        <div class="mb-3"><textarea class="form-control" rows="4" placeholder="Mensaje"></textarea></div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+    <!-- Sección factor competitivo -->
+    <div class="row align-items-center pb-5 animate-on-scroll">
+      <div class="col-md-5 pb-5 order-md-2 mb-4 mb-md-0 d-flex justify-content-center align-items-center">
+        <img src="/img/All_Beige_V.png" class="img-fluid-custom rounded-4 shadow" alt="Equipo Zaxar">
+      </div>
+      <div class="col-md-7 order-md-1 pb-5">
+        <h3 class="h4 mb-3 titulo-blanco-montserrat">Nuestro factor competitivo</h3>
+        <p class="texto-nosotros">
+          Destacamos por nuestra amplia red de contactos y un profundo conocimiento del mercado inmobiliario. Potenciamos cada venta utilizando soluciones tecnológicas avanzadas que optimizan el proceso y maximizan los resultados. Al ser una agencia especializada en inversiones, siempre garantizamos que cada operación sea rentable, asegurando el éxito y la satisfacción de nuestros clientes.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================  SERVICIOS  ===================== -->
+<section id="servicios" class="fondo-servicios py-5">
+  <div class="container">
+
+    <!-- título -->
+    <div class="text-center-servicios mb-5 animate-on-scroll">
+      <h2>Nuestros Servicios</h2>
+    </div>
+
+    <!-- grid Bootstrap: 1 col en móvil / 2 col ≥ md -->
+    <div class="row-servicios animate-on-scroll mb-4">
+
+      <!-- 1 -->
+        <article class="service-card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="fw-semibold">1. Valoración profesional de propiedades</span>
+            </div>
+            <div class="card-back">
+              <p class="mb-0 text-center">
+                Estimamos el valor real de tu inmueble basándonos en un análisis detallado del mercado local.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      <!-- 2 -->
+        <article class="service-card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="fw-semibold">2. Asesoramiento personalizado</span>
+            </div>
+            <div class="card-back">
+              <p class="mb-0 text-center">
+                Acompañamos cada operación con un trato cercano, profesional y adaptado a tus necesidades.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      <!-- 3 -->
+        <article class="service-card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="fw-semibold">3. Marketing inmobiliario avanzado</span>
+            </div>
+            <div class="card-back">
+              <p class="mb-0 text-center">
+                Fotografía profesional, vídeo dron, home staging, visitas virtuales y promoción en portales internacionales.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      <!-- 4 -->
+        <article class="service-card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="fw-semibold">4. Venta de propiedades residenciales, rurales y de lujo</span>
+            </div>
+            <div class="card-back">
+              <p class="mb-0 text-center">
+                Especialistas en fincas, villas, cortijos y casas con encanto en la Axarquía.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      <!-- 5 -->
+        <article class="service-card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="fw-semibold">5. Búsqueda de propiedades a medida</span>
+            </div>
+            <div class="card-back">
+              <p class="mb-0 text-center">
+                Encontramos la propiedad perfecta para ti, ya sea como hogar, inversión o residencia vacacional.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      <!-- 6 -->
+        <article class="service-card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="fw-semibold">6. Gestión de alquileres de larga temporada y vacacionales</span>
+            </div>
+            <div class="card-back">
+              <p class="mb-0 text-center">
+                Servicios completos para propietarios e inquilinos, incluyendo mantenimiento y atención al cliente.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      <!-- 7 -->
+        <article class="service-card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="fw-semibold">7. Reformas y proyectos de renovación</span>
+            </div>
+            <div class="card-back">
+              <p class="mb-0 text-center">
+                Coordinamos reformas integrales o parciales con arquitectos, diseñadores y constructores de confianza.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      <!-- 8 -->
+        <article class="service-card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="fw-semibold">8. Asesoramiento legal y gestión documental</span>
+            </div>
+            <div class="card-back">
+              <p class="mb-0 text-center">
+                Te ayudamos con todos los trámites legales, notariales y fiscales, con apoyo de expertos.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      <!-- 9 -->
+        <article class="service-card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="fw-semibold">9. Tramitación de la Golden Visa y residencia para inversores</span>
+            </div>
+            <div class="card-back">
+              <p class="mb-0 text-center">
+                Facilitamos todo el proceso legal para obtener la residencia a través de la inversión inmobiliaria en España.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      <!-- 10 -->
+        <article class="service-card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="fw-semibold">10. Gestión integral de construcción sobre terreno</span>
+            </div>
+            <div class="card-back">
+              <p class="mb-0 text-center">
+                Desde la búsqueda del terreno hasta diseño, licencias y obra, con un equipo técnico local.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      <!-- 11 -->
+
+        <article class="service-card" tabindex="0">
+          <div class="card-inner">
+            <div class="card-front">
+              <span class="fw-semibold">11. Red de colaboradores locales de confianza</span>
+            </div>
+            <div class="card-back">
+              <p class="mb-0 text-center">
+                Acceso a una red profesional de arquitectos, abogados, gestores y técnicos para cubrir todas tus necesidades.
+              </p>
+            </div>
+          </div>
+        </article>
+
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section>
+
+
+
+<section id="contacto" class="contacto-section fondo-contacto">
+  <div class="container animate-on-scroll">
+
+    <div class="text-center-contacto mb-5 animate-on-scroll">
+    <h2 class="titulo-nosotros mb-5">Contacto</h2>
+    </div>
+
+    <p class="lead text-center contacto-desc">
+      ¿Tienes dudas o necesitas orientación para comprar, vender o invertir? <br class="d-none d-md-inline">
+      Nuestro equipo de asesores estará encantado de escucharte, estudiar tu caso y proponerte la mejor estrategia. Completa el formulario, llámanos o escríbenos y recibirás una respuesta personalizada en menos de 24 horas <br><br> Porque en Zaxar Real Estate tu proyecto es tan importante para nosotros como lo es para ti.
+    </p>
+
+        <!-- ② Botón que abre el modal -->
+    <div class="text-center">
+      <button class="btn-personalizado-contacto btn-contacto" data-bs-toggle="modal" data-bs-target="#contactModal">
+        Cuéntanos tu idea
+      </button>
+    </div>
+
+    <!-- ① Bloque con los 4 datos -->
+    <div class="row justify-content-center text-center g-4 mb-4 contact-datos mt-5">
+      <!-- Teléfono -->
+      <div class="col-6 col-md-3">
+        <img src="img/telefono.png" alt="Teléfono" class="contacto-icon-img">
+        <p class="mt-2 mb-0">+34&nbsp;641&nbsp;384&nbsp;499</p>
+      </div>
+      <!-- Email -->
+      <div class="col-6 col-md-3">
+        <img src="img/email.png" alt="Email" class="contacto-icon-img">
+        <p class="mt-2 mb-0">info@grupozaxar.com</p>
+      </div>
+      <!-- Instagram -->
+      <div class="col-6 col-md-3">
+        <img src="img/instagram.png" alt="Instagram" class="contacto-icon-img">
+        <p class="mt-2 mb-0">@zaxar_realestate</p>
+      </div>
+      <!-- Dirección -->
+      <div class="col-6 col-md-3">
+        <img src="img/ubicacion.png" alt="Dirección" class="contacto-icon-img">
+        <p class="mt-2 mb-0">
+          Torrox Costa, Málaga 29793
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ───────────  MODAL CON FORMULARIO  ─────────── -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Envíanos un mensaje</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <form action="mailto:info@grupozaxar.com" method="POST" enctype="text/plain">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre *</label>
+            <input type="text" class="form-control" id="nombre" name="Nombre" required>
+          </div>
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono *</label>
+            <input type="tel" class="form-control" id="telefono" name="Teléfono"
+                   pattern="[\d\s+()-]{6,}" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico *</label>
+            <input type="email" class="form-control" id="email" name="Email" required>
+          </div>
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje *</label>
+            <textarea class="form-control" id="mensaje" name="Mensaje" rows="4" required></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
       </form>
     </div>
-  </section>
+  </div>
+</div>  
+
+<!-- ::::::::::::: MODAL VENDER ::::::::::::: -->
+<div class="modal fade" id="venderModal" tabindex="-1" aria-labelledby="venderModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="venderModalLabel">Vende tu vivienda</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <!-- Formulario -->
+      <form action="mailto:info@zaxar.es" method="POST" enctype="text/plain">
+        <div class="modal-body">
+
+          <div class="row g-3">
+            <!-- Nombre -->
+            <div class="col-12 col-md-6">
+              <label for="v-nombre" class="form-label">Nombre *</label>
+              <input type="text" class="form-control" id="v-nombre" name="Nombre" required>
+            </div>
+
+            <!-- Email -->
+            <div class="col-12 col-md-6">
+              <label for="v-email" class="form-label">Correo electrónico *</label>
+              <input type="email" class="form-control" id="v-email" name="Email" required>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="col-12 col-md-6">
+              <label for="v-tlf" class="form-label">Teléfono *</label>
+              <input type="tel" class="form-control" id="v-tlf" name="Teléfono"
+                     pattern="[\d\s+()-]{6,}" required>
+            </div>
+
+            <!-- Tipo de vivienda -->
+            <div class="col-12 col-md-6">
+              <label for="v-tipo" class="form-label">Tipo de vivienda *</label>
+              <select class="form-select" id="v-tipo" name="Tipo de vivienda" required>
+                <option value="" selected disabled>Selecciona una opción</option>
+                <option>Piso</option>
+                <option>Adosado</option>
+                <option>Casa</option>
+              </select>
+            </div>
+
+            <!-- Descripción -->
+            <div class="col-12">
+              <label for="v-desc" class="form-label">Descripción *</label>
+              <textarea class="form-control" id="v-desc" name="Descripción" rows="4" required></textarea>
+            </div>
+          </div><!-- /.row -->
+
+        </div><!-- /.modal-body -->
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>

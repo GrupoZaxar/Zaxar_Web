@@ -1,0 +1,66 @@
+.bg-personalizado-catalogo{
+    background-color: #D8CBB0;
+    background-image: url('/img/catalogo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; 
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.fondo-golf {
+  background-image: url('/img/golf.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; 
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+/* background-color: #D8CBB0
+background-color: #2c4a64
+background-color: #B88C5A*/
+
+.card_house{
+    background-color: #fbf4e8;
+}
+
+.text-center-catalogo{
+    margin-top: 10vh;
+}
+
+.text-center-catalogo h1 {
+  font-weight: 600;
+  font-family:'Montserrat', sans-serif;
+  font-size: 4rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  text-align: center;
+  padding-top: 4vh;
+  padding-bottom: 2vh;
+}
+
+/* ─── Animación de entrada global al cargar ───────────── */
+.animate-on-load {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-load.show {
+  opacity: 1;
+  transform: none;
+}
+
+/* reglas generales */
+
+@media (max-width: 768px) {        /* ← deja esto AL FINAL del archivo */
+  .text-center-catalogo { 
+        margin-top: 4vh; 
+    }
+
+  .text-center-catalogo h1 {
+    font-size: 2rem !important;    /* ejemplo: más pequeño en móvil */
+  }
+}

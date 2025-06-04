@@ -1,12 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
+/*GENERAL*/
+
 body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
+section {
+  background-color: #2c4a64;
+  scroll-margin-top: 12vh;
+}
+
+/*BARRA NAVEGACIÓN*/
 .navbar {
   --bs-navbar-padding-y: 0;
+  border-bottom: 1px solid #2c4a64; /* línea fina gris clara */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* opcional: le da un poco de profundidad */
 }
 
 .navbar-nav .nav-link {
@@ -17,20 +27,22 @@ body {
   margin: 0 12px; /* separa los textos horizontalmente */
 }
 
-section {
-  padding-top: 8vh; /* deja espacio para el navbar fijo */
-  background-color: #2c4a64;
+.bg-personalizado .nav-link {
+color: #375e81;
 }
 
-.bg-personalizado .nav-link {
-  color: #375e81;
-}
 .bg-personalizado .nav-link:hover {
-  color: #ffffff;
+color: #ffffff;
 }
 
 .bg-personalizado{
-  background-color: #D8CBB0;
+background-color: #D8CBB0;
+}
+
+/*HOME*/
+section#inicio {
+  padding-top: 8vh; /* deja espacio para el navbar fijo */
+  background-color: #2c4a64;
 }
 
 .texto-estatico-superior {
@@ -64,7 +76,7 @@ section {
 
 
 #homeCarousel {
-  height: 85vh; /* Ajusta a tu gusto: 80% del alto del navegador */
+  height: 100%; /* Ajusta a tu gusto: 80% del alto del navegador */
   display: flex;
   align-items: center;
 }
@@ -178,8 +190,52 @@ section {
 .flip-card-back p {
   padding-left: 2%;
   padding-right: 2%;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: justify;
+}
+
+
+/*OPORTUNIDADES*/
+@keyframes slideFadeIn {
+  0%   { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ① Estado inicial: oculto fuera de pantalla */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* ② Cuando el JS añada la clase .animate, se reproduce la animación */
+.animate-on-scroll.animate {
+  animation: slideFadeIn 1s ease-out forwards;
+}
+
+.text-center h2 {
+  font-weight: 600;
+  font-family:'Montserrat', sans-serif;
+  font-size: 4rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  margin-top: 6vh;
+}
+
+@keyframes flotar_text {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }  /* se eleva 10 px */
+  100% { transform: translateY(0); }
+}
+
+.text-center_bottom h3{
+    font-weight: 600;
+    font-family:'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    margin-top: 12vh;
+    animation: flotar_text 4s ease-in-out infinite;
+
 }
 
 .btn-lg {
@@ -191,24 +247,484 @@ section {
 }
 
 
-.btn-estilo-lujo {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  padding: 0.8rem 2rem;
+.fondo-oportunidades {
+  background-image: url('/img/oportunidades.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; 
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.botones-accion {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 8rem;
+  flex-wrap: wrap;
+}
+
+.btn-personalizado {
+  font-size: 1.5rem;
+  padding: 1rem 2.5rem;
   border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.btn-estilo-lujo:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+
+
+.btn-comprar {
+  background-color: #0056ff;
+  color: white;
 }
 
+.btn-vender {
+  background-color: #111;
+  color: white;
+}
+
+.btn-personalizado:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/*NOSOTROS*/
+.nosotros-seccion {
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+    scroll-margin-top: 90px;
+    background-image: url('/img/nosotros.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.text-center-nosotros h2 {
+  font-weight: 600;
+  font-family:'Montserrat', sans-serif;
+  font-size: 4rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  text-align: center;
+  padding-top: 4vh;
+  padding-bottom: 2vh;
+}
+
+.titulo-nosotros h2 {
+  font-weight: 600;
+  font-family:'Montserrat', sans-serif;
+  font-size: 4rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subtitulo {
+  margin: 0 auto;
+  font-size: 1.3rem;
+  color: #D8CBB0;
+  text-align: justify;
+  font-family:'Montserrat', sans-serif;
+}
+
+.titulo-blanco-montserrat {
+  color: #ffffff;                    /* texto blanco */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+}
+
+.texto-nosotros {
+  font-size: 1.3rem;
+  color: #D8CBB0;
+  text-align: justify;
+  font-family:'Montserrat', sans-serif;
+  padding-top: 2vh;
+  line-height: 1.6;
+}
+
+@keyframes flotar {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }  /* se eleva 10 px */
+  100% { transform: translateY(0); }
+}
+
+.img-fluid-custom{
+  max-width: 60%;
+  height: auto;
+  align-items: center;
+  animation: flotar 4s ease-in-out infinite; 
+} 
+
+/*SERVICIOS*/
+.fondo-servicios {
+  background-image: url('/img/servicios.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 120vh; 
+  width: 100%;
+  padding-bottom: 3rem;
+}
+
+.text-center-servicios{
+  text-align: center;
+}
+
+
+.text-center-servicios h2{
+  font-weight: 600;
+  font-family:'Montserrat', sans-serif;
+  font-size: 3.4rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  margin-top: 3vh;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row-servicios {          /* 3rem horizontal, 2rem vertical */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);        /* 1 columna por defecto (móvil) */
+  gap: 7rem 3rem;   
+}
+
+.service-card {
+  position: relative;
+  perspective: 1000px;                  /* profundidad para el giro */
+  cursor: pointer;
+  background: rgba(216,203,176,0.9);    /* beige arena */
+  border-radius: 0.75rem;
+  height: 100%;                         /* llena su columna */
+  transition: border-color 0.3s ease;
+  outline: 0;    
+  transition: transform 0.25s ease, box-shadow 0.25s ease;                       /* quitamos borde por defecto */
+}
+
+.service-card:hover {
+  background: rgba(255,255,255,0.75);
+  transform: scale(1.04);                 /* pequeño acercamiento */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);/* sombra un poco mayor */
+  z-index: 2;    
+}
+
+.service-card:focus-visible {
+  outline: 3px dashed #2c4a64;
+  transform: scale(1.04);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);          /* accesibilidad teclado */
+}
+
+.card-inner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(.4,.2,.2,1);
+  border-radius: inherit;
+}
+
+.card-front{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+  backface-visibility: hidden;
+  border-radius: inherit;
+  box-shadow: 0 4px 8px rgba(0,0,0,.2);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #2c4a64;
+  min-height: 80px;
+  background: rgba(216, 203, 176, 0.75);  
+}
+
+.card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem;
+  backface-visibility: hidden;
+  border-radius: inherit;
+  box-shadow: 0 4px 8px rgba(0,0,0,.2);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #D8CBB0;
+  min-height: 80px;
+  background: rgba(44, 74, 100, 0.75);  
+}
+
+/* Texto específico */
+.card-front span{
+  color: #2c4a64;
+}
+
+.card-back p { margin: 0; line-height: 1.4; }
+
+.card-front span { font-size: 1.2rem; font-weight: 600; }
+.card-back  p   { font-size: 1.1rem; }
+
+/* cara trasera en espejo */
+.card-back { transform: rotateY(180deg); }
+
+/* activar giro con hover (ratón) o al hacer clic/tocar/Enter */
+.service-card.active .card-inner {
+  transform: rotateY(180deg);
+}
+
+.service-card:hover .card-front{
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.service-card:hover .card-back {
+  background: rgba(75, 116, 152, 0.7);
+}
+
+/*CONTACTO*/
+
+.fondo-contacto{
+  background-image: url('/img/contacto.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh; 
+  padding-bottom: 3rem;
+}
+
+.text-center-contacto{
+  text-align: center;
+}
+
+.text-center-contacto h2{
+  font-weight: 600;
+  font-family:'Montserrat', sans-serif;
+  font-size: 3.4rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  margin-top: 3vh;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.contacto-section {
+  min-height: 90vh;                /* ocupa al menos el 90 % del alto */
+  display: flex;                  
+  flex-direction: column;          /* apila título, datos y botón */         /* centra verticalmente */
+}
+
+
+.contact-datos p {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;  
+  font-size: 1rem;    
+  font-weight: 300;
+  justify-content: center;
+}
+
+.contact-datos > div {               /* cada celda */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacto-desc {
+  font-size: 1.4rem;     /* o el valor que prefieras */
+  color: #ffffff;        /* blanco sobre tu fondo; cambia según contraste */
+  max-width: 700px;      /* opcional: línea más corta en pantallas grandes */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-datos > div:hover .contacto-icon-img {
+  filter: brightness(1.2);
+}
+
+.contacto-icon-img {
+  font-size: 2.5rem;                 /* Bootstrap Icons */
+  width: 48px; height: 48px;         /* imágenes SVG/PNG */
+  color: #2c4a64;                    /* azul corporativo */
+}
+
+/* Si quieres que el título quede un poco más arriba */
+.contacto-section h2 { margin-bottom: 3rem; }
+
+/* Espacio entre los cuatro datos de contacto */
+.contacto-section .row.g-4 { row-gap: 3rem; }
+
+/* Botón algo separado del bloque de datos */
+.contacto-section .btn { margin-top: 3rem; }
+
+.btn-contacto {
+  background-color: #2c4a64;
+  color: white;
+  margin-top: 3vh;
+}
+
+.btn-personalizado-contacto {
+  font-size: 1.5rem;
+  padding: 1rem 2.5rem;
+  border-radius: 5vh;
+  font-weight: bold;
+  align-items: center;
+  gap: 0.7rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: none !important;   /* sin línea */
+  outline: none; 
+}
+
+/* ─── Efecto zoom ───────────────────────── */
+.btn-contacto:hover,
+.btn-personalizado-contacto:hover,
+.btn-contacto:focus-visible,
+.btn-personalizado-contacto:focus-visible {
+  transform: scale(1.05);     /* 5 % más grande */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);   /* opcional: sombra un poco mayor */
+}
+
+/* Tacto/clic - se hunde ligeramente */
+.btn-contacto:active,
+.btn-personalizado-contacto:active {
+  transform: scale(0.98);
+}
+
+.modal-content {
+  border-radius: 2rem;      /* 1 rem ≈ 16 px. Ajusta a tu gusto */
+  overflow: hidden;         /* evita que la imagen del carrusel desborde las esquinas */
+}
+
+.modal-galeria {
+  max-width: 1000px;
+  width: 90vw;
+}
+
+.modal-galeria .modal-body {
+  overflow-y: auto;          /* solo la parte body hace scroll */
+}
+
+/* Ajuste específico para tablet */
+@media (max-width: 1200px) {
+
+/*HOME*/
+.carousel-caption p {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  font-family: 'Montserrat', sans-serif;
+  font-size:1rem;
+  text-align: center;
+}
+
+.texto-estatico-superior h1{
+    width: 90%;
+    margin-top: 5vh;
+    font-family: 'Montserrat', sans-serif;
+    color: white; /* o el color que desees */
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.texto-estatico-superior h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: white; /* o el color que desees */
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.texto-estatico-superior {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    pointer-events: none; 
+}
+
+.texto-nosotros {
+  font-size: 1.6rem;
+}
+
+.text-center_bottom h3{
+  font-weight: 600;
+  font-family:'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  margin-top: 12vh;
+}
+
+.text-center h2 {
+  font-weight: 600;
+  font-family:'Montserrat', sans-serif;
+  font-size: 3.4rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  margin-top: 6vh;
+}
+
+.fondo-oportunidades {
+  background-image: url('/img/oportunidades.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh; 
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+
+
+  /*
+  #homeCarousel {
+    height: 23vh;
+    margin-top: 20vh;
+  }
+
+  .carousel-img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+  }
+
+
+
+  .mt-extra {
+    margin-top: 50px; 
+  }
+
+  .flip-card-back p {
+    margin-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 0.9rem;
+    text-align:center;
+  }
+
+*/
+
+}
 
 /* Ajuste específico para móvil */
 @media (max-width: 768px) {
+
+  /*HOME*/
   #homeCarousel {
     height: 23vh; /* Menos altura en móvil */
     margin-top: 20vh;
@@ -224,18 +740,19 @@ section {
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
   font-family: 'Montserrat', sans-serif;
-  font-size:1rem;
+  font-size:0.9rem;
   text-align: center;
   }
 
   .texto-estatico-superior h1{
     width: 90%;
-    margin-top: 5vh;
     font-family: 'Montserrat', sans-serif;
     color: white; /* o el color que desees */
     text-align: center;
     font-size: 1.8rem;
     font-weight: 900;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .texto-estatico-superior h2 {
@@ -245,6 +762,16 @@ section {
   font-size: 1.2rem;
   font-weight: 400;
   }
+
+  .fondo-golf {
+  background-image: url('/img/golf.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; 
+  padding-top: 12rem;
+  padding-bottom: 3rem;
+}
 
   .mt-extra {
     margin-top: 50px; /* o el valor que necesites */
@@ -259,8 +786,9 @@ section {
   }
 
   .texto-estatico-superior {
+    top: 4%;
+    padding: 0 20px;
     position: absolute;
-    top: 5%;
     width: 100%;
     text-align: center;
     z-index: 10;
@@ -271,6 +799,71 @@ section {
     pointer-events: none; /* Para que no interfiera con clics */
   }
 
+  /*NOSOTROS*/
+  .titulo-nosotros {
+      font-size: 2rem;
+    }
+    .subtitulo {
+      font-size: 1.6rem;
+      padding: 0 1rem;
+    }
+    .texto-nosotros {
+      font-size: 1.2rem;
+    }
+
+    .text-center_bottom h3{
+      font-weight: 600;
+      font-family:'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+      margin-top: 12vh;
+    }
+  
+.fondo-servicios {
+  background-image: url('/img/servicios.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 355vh; 
+  width: 100%;
+  padding-bottom: 10rem;   /* antes 3rem → ahora 6rem */
+ }
+
+  .text-center h2 {
+    font-weight: 600;
+    font-family:'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    margin-top: 6vh;
+  }
+
+  /* 1 ▸  UNA sola columna  */
+  .row-servicios {
+    grid-template-columns: 1fr !important;  /* sin coma, con !important para sobreescribir */
+    gap: 12rem 2rem;   
+    margin-left: 1rem; 
+    margin-right: 1rem;                     /* espacio extra si las tarjetas crecen */
+  }
+
+  /* 2 ▸  Tarjetas más altas y cómodas  */
+  .card-front,
+  .card-back {
+    padding: 1.5rem 1.25rem;
+    min-height: 150px;         /* caben 4-5 líneas de texto */
+  }
+
+  /* 3 ▸  Letras algo más grandes (opcional) */
+  .card-front span { font-size: 1.1rem; }
+  .card-back  p   { font-size: 1rem;  }
+
+  .row-catalogo {
+    grid-template-columns: 1fr;            /* una sola columna */
+  }
+
+  .modal-galeria {
+  max-height: 90vh;
+  }
+
 }
-
-

@@ -1,30 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catálogo de Propiedades</title>
-  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <title>Catálogo | Zaxar Real Estate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- Bootstrap + Icons + tu CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/catalogo.css" rel="stylesheet">
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg fixed-top bg-personalizado">
+<body class="bg-personalizado-catalogo">
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top bg-personalizado">
     <div class="container">
       <a class="navbar-brand" href="index.html">
         <img src="img/All_Blue_H.png" alt="Logo" width="240" height="80" class="d-inline-block align-text-middle">
       </a>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+        </ul>
+      </div>
     </div>
   </nav>
-
-  <section class="pt-5 mt-5">
-    <div class="container">
-      <h1 class="text-center">Catálogo de Propiedades</h1>
-      <p class="text-center">Explora nuestras villas, pisos y terrenos en la Costa del Sol y alrededores.</p>
-      <!-- Aquí puedes insertar tarjetas de propiedades -->
+  <main class="container text-center-catalogo">
+    <h1 class="mb-4">Catálogo de viviendas</h1>
+    <div class="row mb-4">
+      <div class="col-12 col-md-4 mx-auto">
+        <select id="filtroTipo" class="form-select">
+          <option value="">Todos</option>
+          <option value="Piso">Piso</option>
+          <option value="Adosado">Adosado</option>
+          <option value="Casa">Casa</option>
+        </select>
+      </div>
     </div>
-  </section>
 
+
+    <div id="listaPropiedades" class="row row-catalogo row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+      <!-- JS inyectará aquí las cards -->
+    </div>
+  </main>
+
+<!-- :::::::::::::  GALERÍA DE FOTOS  ::::::::::::: -->
+<div class="modal fade" id="galeriaModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-galeria modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-body modal-content card_house p-0">
+
+        <!-- Carrusel Bootstrap -->
+        <div id="galeriaCarousel" class="carousel slide" data-bs-touch="true">
+          <div class="carousel-inner" id="galeriaInner"></div>
+
+          <button class="carousel-control-prev" data-bs-target="#galeriaCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" data-bs-target="#galeriaCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+
+        <div id="galeriaInfo"
+          class="d-flex justify-content-between align-items-start p-4 border-top">
+          <div id="galeriaTexto"></div>        <!-- ← placeholder -->
+          <button class="btn btn-secondary ms-4 align-self-center" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+  <!-- Scripts -->
+  <script type="module" src="js/catalogo.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
