@@ -1,0 +1,8 @@
+# Excluir archivos innecesarios del contenedor Docker
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+.vscode
+*.zip 
