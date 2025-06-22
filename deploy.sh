@@ -12,7 +12,7 @@
 
 # --- Configuración ---
 # Esta es ahora la única fuente de verdad: el repositorio y la web viven aquí.
-WEB_DIR="/var/www/grupozaxar.com"
+WEB_DIR="/root/Zaxar_Web"
 
 # --- Inicio del Script ---
 echo "============================================="
