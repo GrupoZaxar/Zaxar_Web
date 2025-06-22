@@ -2,6 +2,7 @@
 
 # ==============================================================================
 # Script para actualizar y reiniciar el servidor web de Zaxar
+# Versión 2.0 - Corregido para operar en el directorio web correcto.
 #
 # Uso:
 # 1. Guarda este archivo como /root/update_server.sh
@@ -10,49 +11,44 @@
 # ==============================================================================
 
 # --- Configuración ---
-# Asegúrate de que esta es la ruta correcta a la carpeta que contiene tu .git
-REPO_DIR="/root/Zaxar_Web"
+# Esta es ahora la única fuente de verdad: el repositorio y la web viven aquí.
+WEB_DIR="/var/www/grupozaxar.com"
 
 # --- Inicio del Script ---
 echo "============================================="
-echo "Iniciando script de actualización del servidor..."
+echo "Iniciando script de actualización (v2.0)..."
 echo "============================================="
 echo
 
-# --- 1. Actualizar el código desde el repositorio de Git ---
-echo "[Paso 1/3] Navegando a $REPO_DIR y actualizando el código..."
-cd "$REPO_DIR" || { echo "Error Crítico: El directorio $REPO_DIR no existe. Abortando."; exit 1; }
+# --- 1. Navegar al directorio correcto y actualizar desde Git ---
+echo "[Paso 1/3] Navegando a $WEB_DIR y actualizando el código..."
+cd "$WEB_DIR" || { echo "Error Crítico: El directorio $WEB_DIR no existe. Abortando."; exit 1; }
 git pull
-echo "-> Repositorio actualizado."
+echo "-> Repositorio actualizado en el directorio web."
 echo
 
-# --- 2. Matar cualquier proceso antiguo del servidor Python ---
-# Usamos 'pkill -f' para buscar y matar cualquier proceso que coincida con
-# la cadena de comando completa. Es más seguro que 'ps | grep | kill'.
+# --- 2. Matar el proceso antiguo del servidor Python ---
 echo "[Paso 2/3] Buscando y deteniendo el servidor Python antiguo..."
 if pgrep -f "python3 -m http.server 8000" > /dev/null; then
     pkill -f "python3 -m http.server 8000"
-    sleep 1 # Damos un segundo para que el proceso termine limpiamente
+    sleep 1
     echo "-> Servidor antiguo detenido."
 else
-    echo "-> No se encontró ningún servidor antiguo en ejecución. Perfecto."
+    echo "-> No se encontró ningún servidor antiguo en ejecución."
 fi
 echo
 
-# --- 3. Lanzar el nuevo servidor en segundo plano ---
-echo "[Paso 3/3] Lanzando el nuevo servidor actualizado en el puerto 8000..."
-# 'nohup' asegura que el proceso siga corriendo aunque cierres la sesión.
-# '&' lo ejecuta en segundo plano.
-# '>/dev/null 2>&1' evita que se cree el archivo 'nohup.out' y redirige toda
-# la salida (normal y de error) al vacío para no generar basura.
+# --- 3. Lanzar el nuevo servidor desde el directorio actualizado ---
+echo "[Paso 3/3] Lanzando el nuevo servidor desde $WEB_DIR..."
+# Nos aseguramos de lanzar el servidor desde dentro del directorio correcto
 nohup python3 -m http.server 8000 > /dev/null 2>&1 &
-sleep 2 # Esperamos un par de segundos para que el servidor arranque
+sleep 2
 
 # --- Verificación Final ---
 if pgrep -f "python3 -m http.server 8000" > /dev/null; then
-    echo "-> ¡Éxito! El nuevo servidor se está ejecutando en segundo plano."
+    echo "-> ¡Éxito! El nuevo servidor se está ejecutando."
 else
-    echo "-> ¡Error! No se pudo iniciar el nuevo servidor. Revisa si hay algún problema."
+    echo "-> ¡Error! No se pudo iniciar el nuevo servidor."
 fi
 echo
 echo "============================================="
