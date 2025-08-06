@@ -616,6 +616,37 @@ section#inicio {
   overflow-y: auto;          /* solo la parte body hace scroll */
 }
 
+/*Agenda 2030*/
+.footer-ods {
+  background-color: #2c4a64;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.container-ods {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+  padding: 0 20px;
+}
+
+.ods-icon {
+  height: 8vh;
+  width: auto;
+}
+
+.ods-text {
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;  
+  color: hsl(0, 0%, 100%);
+  max-width: 50vw;
+}
+
+
+
+
 /* Ajuste específico para tablet */
 @media (max-width: 1200px) {
 
@@ -868,6 +899,22 @@ section#inicio {
 
   .modal-galeria {
   max-height: 90vh;
+  }
+
+  .container-ods {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ods-icon {
+    height: 6vh; /* opcional: un poco más pequeño en pantallas pequeñas */
+    margin-bottom: 10px;
+  }
+
+  .ods-text {
+    text-align: center;
+    font-size: 0.95rem;
   }
 
 }
